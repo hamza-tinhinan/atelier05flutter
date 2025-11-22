@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'page_infos.dart';
+import 'page_profil.dart';
+
 
 class PageAccueil extends StatelessWidget {
   const PageAccueil({super.key});
@@ -9,17 +11,31 @@ class PageAccueil extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title: Text("page d'accueil")),
         body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
                 MaterialPageRoute(builder: (context) => PageInfos()),
               ); 
             },
             child: Text("aller a la page infos"),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PageProfil()),
+              );
+            },
+            child: Text("aller a la page profil"),
           ),
-        );
+          ],
+          ),
+        ),
+    );
       
     }
 }
