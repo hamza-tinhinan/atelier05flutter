@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
+import 'page_infos.dart';
 
 class PageAccueil extends StatelessWidget {
   const PageAccueil({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(title: Text("page d'accueil")),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("bienvenue sur la page d'accueil"),
-            ],
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PageInfos()),
+              ); 
+            },
+            child: Text("aller a la page infos"),
           ),
-        ),
-      ),
-    );
-  }
+          ),
+        );
+      
+    }
 }
